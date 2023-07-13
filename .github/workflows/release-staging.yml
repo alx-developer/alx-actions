@@ -57,7 +57,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        package: ${{ fromJson(env.nodePaths) }}
+        package: ${{fromJson(jobs.changeFinder.steps.interrogate.env.nodePaths)}}
     steps:
       - uses: google-github-actions/release-please-action@v3
         id: release-please
@@ -68,3 +68,4 @@ jobs:
           package-name: ${{ matrix.package }}
           monorepo-tags: true
           command: release-pr
+          
