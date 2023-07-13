@@ -49,16 +49,16 @@ jobs:
               };
             }
             nodePaths = Array.from(nodePaths);
-            echo "nodePaths=JSON.stringify(nodePaths)" >> "$GITHUB_ENV"
+            echo "NODE_PATHS=JSON.stringify($nodePaths)" >> "$GITHUB_ENV"
   release-pr:
-    if: ${{ vars.nodePaths }}
+    if: ${{ vars.NODE_PATHS }}
     runs-on: ubuntu-latest
     needs:
       - changeFinder
     strategy:
       fail-fast: false
       matrix:
-        package: ${{fromJson(vars.nodePaths)}}
+        package: ${{fromJson(vars.NODE_PATHS)}}
     steps:
       - uses: google-github-actions/release-please-action@v3
         id: release-please
