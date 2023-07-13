@@ -1,0 +1,44 @@
+{
+  "name": "alx-lib-a",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/alx-lib-a/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/alx-lib-a",
+        "main": "libs/alx-lib-a/src/index.ts",
+        "tsConfig": "libs/alx-lib-a/tsconfig.lib.json",
+        "assets": ["libs/alx-lib-a/*.md"]
+      }
+    },
+    "publish": {
+      "command": "node tools/scripts/publish.mjs alx-lib-a {args.ver} {args.tag}",
+      "dependsOn": ["build"]
+    },
+    "lint": {
+      "executor": "@nx/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/alx-lib-a/**/*.ts"]
+      }
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "libs/alx-lib-a/jest.config.ts",
+        "passWithNoTests": true
+      },
+      "configurations": {
+        "ci": {
+          "ci": true,
+          "codeCoverage": true
+        }
+      }
+    }
+  },
+  "tags": []
+}
