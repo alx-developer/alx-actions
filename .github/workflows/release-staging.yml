@@ -57,7 +57,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        package: ${{fromJson(env.nodePaths)}}
+        package: ${{ fromJson(env.nodePaths) }}
     steps:
       - uses: google-github-actions/release-please-action@v3
         id: release-please
