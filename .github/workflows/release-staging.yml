@@ -18,6 +18,7 @@ jobs:
       - id: interrogate
         uses: actions/github-script@v6
         with:
+          debug: true
           github-token: ${{secrets.GITHUB_TOKEN}}
           retries: 1
           script: |
@@ -49,6 +50,7 @@ jobs:
               };
             }
             nodePaths = Array.from(nodePaths);
+            console.log(nodePaths);
             echo "matrix=$nodePaths" >> $GITHUB_OUTPUT
   release-pr:
     runs-on: ubuntu-latest
