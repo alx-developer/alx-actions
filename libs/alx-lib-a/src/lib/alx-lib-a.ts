@@ -1,3 +1,3 @@
 export function alxLibA(): string {
-  return 'welcome to alx-lib-a';
+  return 'Welcome to alx-lib-a';
 }
