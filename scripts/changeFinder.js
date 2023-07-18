@@ -19,7 +19,7 @@ module.exports = async ({ github, context, core }) => {
   const status = execSync(`git diff --name-only origin/staging`, {
     encoding: 'utf-8',
   });
-  console.log(status);
+  console.log('repo changes:', status);
   const changes = status.split('\n');
   let nodePaths = new Set();
   for (const change of changes) {
@@ -29,5 +29,6 @@ module.exports = async ({ github, context, core }) => {
     }
   }
   nodePaths = Array.from(nodePaths);
+  console.log('paths result', nodePaths);
   return nodePaths;
 };
