@@ -23,8 +23,10 @@ jobs:
           github-token: ${{secrets.GITHUB_TOKEN}}
           retries: 1
           script: |
-            const script = require('./../scripts/changeFinder.js');
-            return await script({github, context, core});
+            const script = require('./scripts/changeFinder.js');
+            const result = await script({github, context, core});
+            console.log(result);
+            return result;
       - run: echo "matrix=${{steps.interrogate.outputs.result}}" >> $GITHUB_OUTPUT
   release-pr:
     runs-on: ubuntu-latest
