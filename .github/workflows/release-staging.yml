@@ -49,7 +49,7 @@ jobs:
               };
             }
             nodePaths = Array.from(nodePaths);
-            echo "matrix='${{ nodePaths }}'" >> $GITHUB_OUTPUT
+            echo "matrix=`${nodePaths}`" >> $GITHUB_OUTPUT
   release-pr:
     runs-on: ubuntu-latest
     needs:
