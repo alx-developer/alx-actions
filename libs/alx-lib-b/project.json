@@ -1,0 +1,26 @@
+{
+  "name": "alx-lib-b",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/alx-lib-b/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/alx-lib-b",
+        "main": "libs/alx-lib-b/src/index.ts",
+        "tsConfig": "libs/alx-lib-b/tsconfig.lib.json",
+        "assets": ["libs/alx-lib-b/*.md"]
+      }
+    },
+    "lint": {
+      "executor": "@nx/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/alx-lib-b/**/*.ts"]
+      }
+    }
+  },
+  "tags": []
+}

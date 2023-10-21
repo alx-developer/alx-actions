@@ -15,7 +15,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@alx-actions": ["libs/alx-lib-a/src/index.ts"]
+      "@alx-actions": ["libs/alx-lib-a/src/index.ts"],
+      "@alx-actions/alx-lib-b": ["libs/alx-lib-b/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
