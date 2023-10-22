@@ -9,3 +9,7 @@ export function testALXLibA(): string {
 export function test2ALXLibA(): string {
   return 'Test 2 ALX';
 }
+
+export function test3ALXLibA(): string {
+  return 'Test 3 ALX';
+}
