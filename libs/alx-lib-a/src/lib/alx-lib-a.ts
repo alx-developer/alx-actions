@@ -5,3 +5,7 @@ export function alxLibA(): string {
 export function testALXLibA(): string {
   return 'Test ALX';
 }
+
+export function test2ALXLibA(): string {
+  return 'Test 2 ALX';
+}
