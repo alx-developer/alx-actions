@@ -7,7 +7,7 @@ permissions:
   contents: write
   pull-requests: write
 
-name: release-staging
+name: release-please
 
 jobs:
   release-please:
@@ -16,5 +16,4 @@ jobs:
       - uses: google-github-actions/release-please-action@v3
         with:
           release-type: node
-          monorepo-tags: true
-          prerelease: true
+          package-name: @alxdev/alx-lib-a
